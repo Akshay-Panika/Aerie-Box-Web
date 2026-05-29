@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "964646589740",
+    "project_id": "ravita-nexus",
+    "storage_bucket": "ravita-nexus.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964646589740:android:d567bddf13f04c10c78889",
+        "android_client_info": {
+          "package_name": "com.example.ravita_nexus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdvBZAARGBf6ci6U3asJhqwEEUDThbqE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

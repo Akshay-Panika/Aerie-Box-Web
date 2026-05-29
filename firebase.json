@@ -1,0 +1,39 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "ravita-nexus",
+          "appId": "1:964646589740:android:d567bddf13f04c10c78889",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "ravita-nexus",
+          "configurations": {
+            "android": "1:964646589740:android:d567bddf13f04c10c78889",
+            "ios": "1:964646589740:ios:d1ba0cdf8939e104c78889",
+            "macos": "1:964646589740:ios:d1ba0cdf8939e104c78889",
+            "web": "1:964646589740:web:2a85236a70ea4bcfc78889",
+            "windows": "1:964646589740:web:35528f89a2412ed0c78889"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
