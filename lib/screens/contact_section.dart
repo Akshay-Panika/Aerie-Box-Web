@@ -30,7 +30,7 @@ class ContactSection extends StatelessWidget {
                   Text(
                     'GET IN TOUCH',
                     style: TextStyle(
-                      color: AppColor.secondary,
+                      color: AppColor.error,
                       fontSize: RFont.size(context, 11, desktop: 12),
                       fontWeight: FontWeight.w700,
                       letterSpacing: 3,
@@ -188,115 +188,75 @@ class ContactSection extends StatelessWidget {
   }
 
   Widget _buildAppDownloadCard(BuildContext context) {
-    return HoverCard(
-      child: Container(
-        padding: const EdgeInsets.all(28),
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [AppColor.primary, Color(0xFF002080)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+    return Container(
+      padding: const EdgeInsets.all(28),
+      // decoration: BoxDecoration(
+      //   gradient: const LinearGradient(
+      //     colors: [AppColor.primary, Color(0xFF002080)],
+      //     begin: Alignment.topLeft,
+      //     end: Alignment.bottomRight,
+      //   ),
+      //   borderRadius: BorderRadius.circular(16),
+      // ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+
+          Text(
+            'Download our app to find, book and manage your rental rooms on the go.',
+            style: TextStyle(
+              color: AppColor.primary,
+              fontSize: RFont.size(context, 14, desktop: 15),
+              height: 1.5,
+            ),
           ),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /// App Icon
-            Container(
-              width: 64,
-              height: 64,
-              decoration: BoxDecoration(
-                color: AppColor.secondary.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: AppColor.secondary, width: 2),
-              ),
-              child: const Center(
-                child: Icon(
-                  Icons.home_work_outlined,
-                  color: AppColor.secondary,
-                  size: 30,
+
+          const SizedBox(height: 24),
+           Center(
+             child: Container(
+               height: 400,width: 200,
+               decoration: BoxDecoration(
+                 borderRadius: BorderRadius.circular(16),
+                 border: Border.all(color: Colors.black),
+                 image: DecorationImage(image: AssetImage("assets/images/aeriebox_app.jpeg"),fit: BoxFit.fill)
+               ),
+             ),
+           ),
+
+          const SizedBox(height: 24),
+
+          /// App Store Buttons
+          Row(
+            children: [
+              Expanded(
+                child: _buildStoreButton(
+                  icon: FontAwesomeIcons.apple,
+                  topText: 'Download on the',
+                  bottomText: 'App Store',
                 ),
               ),
-            ),
-
-            const SizedBox(height: 20),
-
-            Text(
-              'Aerie Box App',
-              style: TextStyle(
-                color: AppColor.white,
-                fontSize: RFont.size(context, 20, desktop: 24),
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-
-            const SizedBox(height: 4),
-
-            Text(
-              'Room Rentals Made Easy',
-              style: TextStyle(
-                color: AppColor.secondary,
-                fontSize: RFont.size(context, 12, desktop: 13),
-                fontWeight: FontWeight.w600,
-                letterSpacing: 0.5,
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            Container(
-              width: double.infinity,
-              height: 1,
-              color: AppColor.white.withOpacity(0.1),
-            ),
-
-            const SizedBox(height: 20),
-
-            Text(
-              'Download our app to find, book and manage your rental rooms on the go.',
-              style: TextStyle(
-                color: AppColor.white.withOpacity(0.8),
-                fontSize: RFont.size(context, 14, desktop: 15),
-                height: 1.5,
-              ),
-            ),
-
-            const SizedBox(height: 24),
-
-            /// App Store Buttons
-            Row(
-              children: [
-                Expanded(
-                  child: _buildStoreButton(
-                    icon: FontAwesomeIcons.apple,
-                    topText: 'Download on the',
-                    bottomText: 'App Store',
-                  ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: _buildStoreButton(
+                  icon: FontAwesomeIcons.googlePlay,
+                  topText: 'Get it on',
+                  bottomText: 'Google Play',
                 ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _buildStoreButton(
-                    icon: FontAwesomeIcons.googlePlay,
-                    topText: 'Get it on',
-                    bottomText: 'Google Play',
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 20),
-
-            Text(
-              'Aerie Box Rental Services',
-              style: TextStyle(
-                color: AppColor.white.withOpacity(0.5),
-                fontSize: RFont.size(context, 12, desktop: 13),
-                letterSpacing: 1,
               ),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+
+          Text(
+            'Aerie Box Rental Services',
+            style: TextStyle(
+              color: AppColor.primary,
+              fontSize: RFont.size(context, 12, desktop: 13),
+              letterSpacing: 1,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -312,7 +272,7 @@ class ContactSection extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
         decoration: BoxDecoration(
-          color: AppColor.white.withOpacity(0.08),
+          color: AppColor.primary,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: AppColor.white.withOpacity(0.15),

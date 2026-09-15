@@ -39,7 +39,7 @@ class AboutSection extends StatelessWidget {
     return Text(
       'WHO WE ARE',
       style: TextStyle(
-        color: AppColor.secondary,
+        color: AppColor.error,
         fontSize: RFont.size(context, 11, desktop: 12),
         fontWeight: FontWeight.w700,
         letterSpacing: 3,
