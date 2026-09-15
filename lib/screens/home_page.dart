@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ravita_nexus/utils/app_color.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../utils/app_color.dart';
 import '../utils/functions.dart';
 import '../utils/screen_helper.dart';
 import '../widgets/navbar.dart';
@@ -96,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                           const SizedBox(width: 8),
 
                           SelectableText(
-                            "ravitanexus.epc@gmail.com",
+                            "contact@aeriebox.com",
                             style: TextStyle(
                               color: Colors.white.withOpacity(0.9),
                               fontSize: 13,
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                           const SizedBox(width: 8),
 
                           SelectableText(
-                            "+91-7477090895",
+                            "+91-6266511433",
                             style: TextStyle(
                               color: AppColor.white,
                               fontSize: 13,
@@ -212,9 +213,9 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton.small(
         onPressed: openWhatsApp,
         backgroundColor: AppColor.secondary,
-        child: const Icon(
-          Icons.chat,
-          color: Colors.white,
+        child:  FaIcon(
+          FontAwesomeIcons.whatsapp,
+          color: AppColor.success,
         ),
       ),    );
   }

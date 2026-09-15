@@ -41,48 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBVjt7YkvRXiUuFSNiTEY0cIkC-AVuPox4',
-    appId: '1:964646589740:web:2a85236a70ea4bcfc78889',
-    messagingSenderId: '964646589740',
-    projectId: 'ravita-nexus',
-    authDomain: 'ravita-nexus.firebaseapp.com',
-    storageBucket: 'ravita-nexus.firebasestorage.app',
-    measurementId: 'G-922XBEWKRS',
+    apiKey: 'AIzaSyA_ihEda2SyjQGP0X6qlcJZtH3fEEbETWo',
+    appId: '1:854556457899:web:0c3bb3ce49bf85ef6fb0ee',
+    messagingSenderId: '854556457899',
+    projectId: 'aerie-box',
+    authDomain: 'aerie-box.firebaseapp.com',
+    storageBucket: 'aerie-box.firebasestorage.app',
+    measurementId: 'G-ZJXGBP2MEH',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBdvBZAARGBf6ci6U3asJhqwEEUDThbqE8',
-    appId: '1:964646589740:android:d567bddf13f04c10c78889',
-    messagingSenderId: '964646589740',
-    projectId: 'ravita-nexus',
-    storageBucket: 'ravita-nexus.firebasestorage.app',
+    apiKey: 'AIzaSyC3Tr4tiWKjWJQbSWtbJnytgNBIaSCjICs',
+    appId: '1:854556457899:android:287b1a031e98126e6fb0ee',
+    messagingSenderId: '854556457899',
+    projectId: 'aerie-box',
+    storageBucket: 'aerie-box.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCyFpLB9K2wC3IitC7qen53fPaVKrytmAs',
-    appId: '1:964646589740:ios:d1ba0cdf8939e104c78889',
-    messagingSenderId: '964646589740',
-    projectId: 'ravita-nexus',
-    storageBucket: 'ravita-nexus.firebasestorage.app',
+    apiKey: 'AIzaSyB-2lnK9M1JQRRP3gRe77iNPGlY7ikWvbY',
+    appId: '1:854556457899:ios:d536fd6be3dc88016fb0ee',
+    messagingSenderId: '854556457899',
+    projectId: 'aerie-box',
+    storageBucket: 'aerie-box.firebasestorage.app',
     iosBundleId: 'com.example.ravitaNexus',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCyFpLB9K2wC3IitC7qen53fPaVKrytmAs',
-    appId: '1:964646589740:ios:d1ba0cdf8939e104c78889',
-    messagingSenderId: '964646589740',
-    projectId: 'ravita-nexus',
-    storageBucket: 'ravita-nexus.firebasestorage.app',
+    apiKey: 'AIzaSyB-2lnK9M1JQRRP3gRe77iNPGlY7ikWvbY',
+    appId: '1:854556457899:ios:d536fd6be3dc88016fb0ee',
+    messagingSenderId: '854556457899',
+    projectId: 'aerie-box',
+    storageBucket: 'aerie-box.firebasestorage.app',
     iosBundleId: 'com.example.ravitaNexus',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBVjt7YkvRXiUuFSNiTEY0cIkC-AVuPox4',
-    appId: '1:964646589740:web:35528f89a2412ed0c78889',
-    messagingSenderId: '964646589740',
-    projectId: 'ravita-nexus',
-    authDomain: 'ravita-nexus.firebaseapp.com',
-    storageBucket: 'ravita-nexus.firebasestorage.app',
-    measurementId: 'G-MCMYF8SHRY',
+    apiKey: 'AIzaSyA_ihEda2SyjQGP0X6qlcJZtH3fEEbETWo',
+    appId: '1:854556457899:web:ac2a16c5661684996fb0ee',
+    messagingSenderId: '854556457899',
+    projectId: 'aerie-box',
+    authDomain: 'aerie-box.firebaseapp.com',
+    storageBucket: 'aerie-box.firebasestorage.app',
+    measurementId: 'G-V121VEMP9Q',
   );
 }

@@ -83,15 +83,15 @@ class _WhyUsSectionState extends State<WhyUsSection> {
                   Text(
                     'WHY CHOOSE US',
                     style: TextStyle(
-                      color: AppColor.secondary,
-                      fontSize: RFont.size(context, 11, desktop: 12),
+                      color: AppColor.error,
+                      fontSize: RFont.size(context, 11, desktop: 14),
                       fontWeight: FontWeight.w700,
                       letterSpacing: 3,
                     ),
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    'The Ravita Nexus Advantage',
+                    'The Aerie Box Advantage',
                     style: TextStyle(
                       color: AppColor.primary,
                       fontSize: RFont.size(context, 22, tablet: 28, desktop: 36),
@@ -109,7 +109,7 @@ class _WhyUsSectionState extends State<WhyUsSection> {
               color: AppColor.white,
               width: double.infinity,
               padding: EdgeInsets.symmetric(
-                horizontal: isMobile ? 20 : (isTablet ? 60 : 120),
+                horizontal: isMobile ? 20 : (isTablet ? 60 : 60),
                 vertical: isMobile ? 50 : 70,
               ),
               child: Column(
@@ -117,7 +117,7 @@ class _WhyUsSectionState extends State<WhyUsSection> {
                   Text(
                     'CLIENT TESTIMONIALS',
                     style: TextStyle(
-                      color: AppColor.secondary,
+                      color: AppColor.error,
                       fontSize: RFont.size(context, 11, desktop: 12),
                       fontWeight: FontWeight.w700,
                       letterSpacing: 3,
@@ -151,34 +151,34 @@ class _WhyUsSectionState extends State<WhyUsSection> {
                       children: [
                         _buildTestimonialCard(
                           context,
-                          name: 'Industrial Client',
-                          role: 'Manufacturing Unit',
+                          name: 'Student Tenant',
+                          role: 'PG Room Resident',
                           review:
-                          'Ravita Nexus delivered the project on time with excellent execution quality and professional coordination.',
+                          'Aerie Box provided me a clean and fully furnished PG room at an affordable price. The booking process was quick and completely hassle-free.',
                         ),
 
                         _buildTestimonialCard(
                           context,
-                          name: 'Commercial Partner',
-                          role: 'Infrastructure Project',
+                          name: 'Working Professional',
+                          role: 'Monthly Room Rental',
                           review:
-                          'Their costing accuracy and site management helped us complete the project smoothly without delays.',
+                          'The room was well-maintained with all basic facilities. Transparent pricing and no hidden charges made my stay very comfortable.',
                         ),
 
                         _buildTestimonialCard(
                           context,
-                          name: 'Electrical Contractor',
-                          role: 'Electrical Contracting',
+                          name: 'Family Tenant',
+                          role: 'Accommodation Service',
                           review:
-                          'Professional team with strong execution capability and proper site supervision throughout the project.',
+                          'We rented a fully furnished room through Aerie Box and the experience was smooth. Great location, secure premises and prompt support.',
                         ),
 
                         _buildTestimonialCard(
                           context,
-                          name: 'Project Consultant',
-                          role: 'Commercial Development',
+                          name: 'Regular Customer',
+                          role: 'Furniture Rental',
                           review:
-                          'Excellent coordination, transparent communication and timely project handover impressed our team.',
+                          'Their room products and furniture rental service is excellent. Quality products, easy setup and very reasonable rental plans.',
                         ),
                       ]
                           .map(
@@ -208,7 +208,7 @@ class _WhyUsSectionState extends State<WhyUsSection> {
               child: Column(
                 children: [
                   Text(
-                    'INDUSTRIES WE SERVE',
+                    'WHO WE SERVE',
                     style: TextStyle(
                       color: AppColor.secondary,
                       fontSize: RFont.size(context, 11, desktop: 12),
@@ -264,40 +264,40 @@ class _WhyUsSectionState extends State<WhyUsSection> {
   Widget _buildWhyUsGrid(BuildContext context, bool isMobile) {
     final reasons = [
       {
-        'icon': Icons.calculate_outlined,
-        'title': 'Costing Expertise',
-        'desc': 'Strong expertise in costing & estimation for accurate project planning',
+        'icon': Icons.currency_rupee_outlined,
+        'title': 'Affordable Pricing',
+        'desc': 'Budget-friendly room rentals with completely transparent and honest pricing',
       },
       {
         'icon': Icons.schedule,
-        'title': 'On-Time Delivery',
-        'desc': 'Focus on on-time completion with zero compromise on deadlines',
+        'title': 'Quick Booking',
+        'desc': 'Fast and hassle-free room booking process with instant confirmation',
       },
       {
-        'icon': Icons.groups_outlined,
-        'title': 'Reliable Network',
-        'desc': 'Reliable labour & vendor network for seamless project execution',
+        'icon': Icons.cleaning_services_outlined,
+        'title': 'Clean & Maintained',
+        'desc': 'Regularly cleaned rooms with proper housekeeping and maintenance support',
       },
       {
-        'icon': Icons.verified_outlined,
-        'title': 'Quality & Safety',
-        'desc': 'Commitment to quality & safety at every stage of the project',
+        'icon': Icons.security_outlined,
+        'title': 'Safe & Secure',
+        'desc': 'CCTV secured premises with 24/7 support for complete peace of mind',
       },
     ];
 
     return isMobile
         ? Column(children: reasons.map((r) => Padding(
       padding: const EdgeInsets.only(bottom: 16),
-          child: _buildReasonCard(context, r),
-        )).toList())
+      child: _buildReasonCard(context, r),
+    )).toList())
         : Row(
-            children: reasons.map((r) => Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(right: 16),
-                child: _buildReasonCard(context, r),
-              ),
-            )).toList(),
-          );
+      children: reasons.map((r) => Expanded(
+        child: Padding(
+          padding: const EdgeInsets.only(right: 16),
+          child: _buildReasonCard(context, r),
+        ),
+      )).toList(),
+    );
   }
 
   Widget _buildReasonCard(BuildContext context, Map<String, dynamic> data) {
@@ -354,10 +354,10 @@ class _WhyUsSectionState extends State<WhyUsSection> {
 
   Widget _buildIndustriesGrid(BuildContext context, bool isMobile) {
     final industries = [
-      {'icon': Icons.factory_outlined, 'label': 'Industrial Projects'},
-      {'icon': Icons.apartment_outlined, 'label': 'Commercial Buildings'},
-      {'icon': Icons.location_city_outlined, 'label': 'Infrastructure Development'},
-      {'icon': Icons.electric_bolt_outlined, 'label': 'Electrical Contracting'},
+      {'icon': Icons.school_outlined, 'label': 'Students'},
+      {'icon': Icons.work_outline, 'label': 'Working Professionals'},
+      {'icon': Icons.family_restroom_outlined, 'label': 'Families'},
+      {'icon': Icons.travel_explore_outlined, 'label': 'Travelers & Bachelors'},
     ];
 
     return Wrap(
@@ -398,11 +398,11 @@ class _WhyUsSectionState extends State<WhyUsSection> {
 
   Widget _buildWorkApproach(BuildContext context, bool isMobile) {
     final steps = [
-      {'num': '01', 'title': 'Requirement Understanding', 'desc': 'Deep dive into client needs and project scope'},
-      {'num': '02', 'title': 'Planning & Estimation', 'desc': 'Detailed BOQ, cost estimation & resource planning'},
-      {'num': '03', 'title': 'Resource Mobilization', 'desc': 'Deploy skilled labour & procure materials'},
-      {'num': '04', 'title': 'Execution with Supervision', 'desc': 'On-site execution under expert supervision'},
-      {'num': '05', 'title': 'Timely Completion & Handover', 'desc': 'Quality check, testing & successful handover'},
+      {'num': '01', 'title': 'Search & Enquiry', 'desc': 'Browse available rooms and share your requirements'},
+      {'num': '02', 'title': 'Room Selection', 'desc': 'Choose the best room based on budget & location'},
+      {'num': '03', 'title': 'Booking Confirmation', 'desc': 'Quick booking with transparent pricing & no hidden charges'},
+      {'num': '04', 'title': 'Move-In & Setup', 'desc': 'Smooth check-in with furnished room & basic facilities'},
+      {'num': '05', 'title': 'Stay & Support', 'desc': 'Enjoy a comfortable stay with 24/7 tenant support'},
     ];
 
     if (isMobile) {

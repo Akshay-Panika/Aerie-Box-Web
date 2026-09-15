@@ -49,7 +49,7 @@ class AboutSection extends StatelessWidget {
 
   Widget _buildTitle(BuildContext context) {
     return Text(
-      'About Ravita Nexus EPC Solutions',
+      'About Aerie Box Room Rentals',
       textAlign: TextAlign.center,
       style: TextStyle(
         color: AppColor.primary,
@@ -86,7 +86,7 @@ class AboutSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Ravita Nexus EPC Solutions is a fast-growing EPC (Engineering, Procurement & Construction) firm delivering reliable and result-oriented solutions in electrical and infrastructure projects.',
+          'Aerie Box is a fast-growing room rental service providing comfortable, affordable, and well-managed rental rooms for students, working professionals, and families.',
           style: TextStyle(
             color: AppColor.subtitle,
             fontSize: RFont.size(context, 14, desktop: 16),
@@ -95,7 +95,7 @@ class AboutSection extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         Text(
-          'We specialize in efficient execution, cost control, and timely delivery, ensuring every project meets the highest standards of quality, safety, and performance.',
+          'We specialize in room booking, PG rooms, accommodation services, and fully furnished room products, ensuring every stay meets the highest standards of comfort, safety, and convenience.',
           style: TextStyle(
             color: AppColor.subtitle,
             fontSize: RFont.size(context, 14, desktop: 16),
@@ -104,10 +104,10 @@ class AboutSection extends StatelessWidget {
         ),
         const SizedBox(height: 28),
         ...[
-          'Practical, site-oriented execution approach',
-          'Cost-effective solutions',
-          'Fast decision-making',
-          'Client-focused working style',
+          'Practical, tenant-friendly rental approach',
+          'Affordable and transparent pricing',
+          'Quick room booking & hassle-free process',
+          'Client-focused accommodation services',
         ].map((point) => Padding(
           padding: const EdgeInsets.only(bottom: 12),
           child: Row(
@@ -118,7 +118,7 @@ class AboutSection extends StatelessWidget {
                 width: 8,
                 height: 8,
                 decoration: const BoxDecoration(
-                  color: AppColor.secondary,
+                  color: AppColor.primary,
                   shape: BoxShape.circle,
                 ),
               ),
@@ -148,7 +148,7 @@ class AboutSection extends StatelessWidget {
           context,
           icon: Icons.visibility_outlined,
           title: 'Our Vision',
-          content: 'To become a trusted name in EPC contracting by delivering consistent quality, dependable execution, and long-term value.',
+          content: 'To become a trusted name in room rental services by delivering consistent comfort, dependable accommodation, and long-term value to every tenant.',
         ),
         const SizedBox(height: 20),
         _buildCard(
@@ -157,9 +157,9 @@ class AboutSection extends StatelessWidget {
           title: 'Our Mission',
           content: '',
           points: [
-            'Execute with precision & accountability',
-            'Build trust & transparency',
-            'Deliver on time without compromise',
+            'Provide clean & well-maintained rooms',
+            'Build trust & transparency with tenants',
+            'Deliver comfortable stays without compromise',
           ],
         ),
       ],
@@ -167,12 +167,12 @@ class AboutSection extends StatelessWidget {
   }
 
   Widget _buildCard(
-    BuildContext context, {
-    required IconData icon,
-    required String title,
-    required String content,
-    List<String>? points,
-  }) {
+      BuildContext context, {
+        required IconData icon,
+        required String title,
+        required String content,
+        List<String>? points,
+      }) {
     return HoverCard(
       child: Container(
         padding: const EdgeInsets.all(24),

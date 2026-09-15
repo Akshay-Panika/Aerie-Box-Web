@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "964646589740",
-    "project_id": "ravita-nexus",
-    "storage_bucket": "ravita-nexus.firebasestorage.app"
+    "project_number": "854556457899",
+    "project_id": "aerie-box",
+    "storage_bucket": "aerie-box.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:964646589740:android:d567bddf13f04c10c78889",
+        "mobilesdk_app_id": "1:854556457899:android:287b1a031e98126e6fb0ee",
         "android_client_info": {
           "package_name": "com.example.ravita_nexus"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBdvBZAARGBf6ci6U3asJhqwEEUDThbqE8"
+          "current_key": "AIzaSyC3Tr4tiWKjWJQbSWtbJnytgNBIaSCjICs"
         }
       ],
       "services": {

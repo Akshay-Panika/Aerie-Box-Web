@@ -3,20 +3,20 @@
     "platforms": {
       "android": {
         "default": {
-          "projectId": "ravita-nexus",
-          "appId": "1:964646589740:android:d567bddf13f04c10c78889",
+          "projectId": "aerie-box",
+          "appId": "1:854556457899:android:287b1a031e98126e6fb0ee",
           "fileOutput": "android/app/google-services.json"
         }
       },
       "dart": {
         "lib/firebase_options.dart": {
-          "projectId": "ravita-nexus",
+          "projectId": "aerie-box",
           "configurations": {
-            "android": "1:964646589740:android:d567bddf13f04c10c78889",
-            "ios": "1:964646589740:ios:d1ba0cdf8939e104c78889",
-            "macos": "1:964646589740:ios:d1ba0cdf8939e104c78889",
-            "web": "1:964646589740:web:2a85236a70ea4bcfc78889",
-            "windows": "1:964646589740:web:35528f89a2412ed0c78889"
+            "android": "1:854556457899:android:287b1a031e98126e6fb0ee",
+            "ios": "1:854556457899:ios:d536fd6be3dc88016fb0ee",
+            "macos": "1:854556457899:ios:d536fd6be3dc88016fb0ee",
+            "web": "1:854556457899:web:0c3bb3ce49bf85ef6fb0ee",
+            "windows": "1:854556457899:web:ac2a16c5661684996fb0ee"
           }
         }
       }

@@ -12,28 +12,16 @@ Future<void> makePhoneCall(String phoneNumber) async {
 Future<void> openEmail() async {
   final Uri emailUri = Uri(
     scheme: 'mailto',
-    path: 'ravitanexus.epc@gmail.com',
-    query: 'subject=Business Inquiry',
+    path: 'contact@aeriebox.com',
+    query: 'subject=Room Inquiry',
   );
 
   await launchUrl(emailUri);
 }
 
-// Future<void> openWhatsApp() async {
-//   final Uri whatsapp = Uri.parse(
-//     'https://wa.me/917477090895',
-//   );
-//
-//   if (await canLaunchUrl(whatsapp)) {
-//     await launchUrl(
-//       whatsapp,
-//       mode: LaunchMode.externalApplication,
-//     );
-//   }
-// }
 Future<void> openWhatsApp() async {
   final Uri whatsapp = Uri.parse(
-    'https://wa.me/917477090895?text=Hello%20Ravita%20Nexus',
+    'https://wa.me/916266511433?text=Hello%20Aerie%20Box',
   );
 
   if (await canLaunchUrl(whatsapp)) {

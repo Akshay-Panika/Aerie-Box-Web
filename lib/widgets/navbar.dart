@@ -54,7 +54,7 @@ class _NavBarState extends State<NavBar> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'RAVITA NEXUS',
+                        'AERIE BOX',
                         style: TextStyle(
                           color: AppColor.secondary,
                           fontSize: RFont.size(context, 16, tablet: 18, desktop: 20),
@@ -63,7 +63,7 @@ class _NavBarState extends State<NavBar> {
                         ),
                       ),
                       Text(
-                        'EPC SOLUTIONS',
+                        'RENTAL SOLUTIONS',
                         style: TextStyle(
                           color: AppColor.white.withOpacity(0.7),
                           fontSize: RFont.size(context, 9, tablet: 10, desktop: 11),
@@ -86,7 +86,7 @@ class _NavBarState extends State<NavBar> {
                             decoration: BoxDecoration(
                               border: Border(
                                 bottom: BorderSide(
-                                  color: isActive ? AppColor.secondary : AppColor.white,
+                                  color: isActive ? AppColor.secondary : Colors.grey,
                                   width: 2,
                                 ),
                               ),
@@ -94,7 +94,7 @@ class _NavBarState extends State<NavBar> {
                             child: Text(
                               item,
                               style: TextStyle(
-                                color: isActive ? AppColor.secondary : AppColor.white,
+                                color: isActive ? AppColor.secondary : Colors.grey,
                                 fontSize: RFont.size(context, 13, desktop: 14),
                                 fontWeight: isActive ? FontWeight.w700 : FontWeight.w400,
                                 letterSpacing: 0.5,
@@ -144,7 +144,7 @@ class _NavBarState extends State<NavBar> {
                           child: Text(
                             item,
                             style: TextStyle(
-                              color: isActive ? AppColor.secondary : AppColor.white,
+                              color: isActive ? AppColor.secondary : Colors.grey,
                               fontSize: 14,
                               fontWeight: isActive ? FontWeight.w700 : FontWeight.w400,
                             ),

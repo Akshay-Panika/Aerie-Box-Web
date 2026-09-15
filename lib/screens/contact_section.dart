@@ -47,7 +47,7 @@ class ContactSection extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Ready to start your project? Reach out to us today.',
+                    'Looking for a room? Reach out to us today.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: AppColor.subtitle,
@@ -75,7 +75,7 @@ class ContactSection extends StatelessWidget {
       children: [
         _buildContactInfo(context),
         const SizedBox(height: 32),
-        _buildFounderCard(context),
+        _buildAppDownloadCard(context),
       ],
     );
   }
@@ -86,7 +86,7 @@ class ContactSection extends StatelessWidget {
       children: [
         Expanded(flex: 5, child: _buildContactInfo(context)),
         const SizedBox(width: 60),
-        Expanded(flex: 4, child: _buildFounderCard(context)),
+        Expanded(flex: 4, child: _buildAppDownloadCard(context)),
       ],
     );
   }
@@ -96,17 +96,17 @@ class ContactSection extends StatelessWidget {
       {
         'icon': Icons.location_on_outlined,
         'label': 'Location',
-        'value': 'Ahmedabad, Gujarat',
+        'value': 'Jabalpur, Madhya Pradesh',
       },
       {
         'icon': Icons.phone_outlined,
         'label': 'Phone',
-        'value': '+91-7477090895',
+        'value': '+91-6266511433',
       },
       {
         'icon': Icons.email_outlined,
         'label': 'Email',
-        'value': 'ravitanexus.epc@gmail.com',
+        'value': 'contact@aeriebox.com',
       },
     ];
 
@@ -114,7 +114,7 @@ class ContactSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Ravita Nexus EPC Solutions',
+          'Aerie Box Room Rentals',
           style: TextStyle(
             color: AppColor.primary,
             fontSize: RFont.size(context, 20, desktop: 24),
@@ -187,7 +187,7 @@ class ContactSection extends StatelessWidget {
     );
   }
 
-  Widget _buildFounderCard(BuildContext context) {
+  Widget _buildAppDownloadCard(BuildContext context) {
     return HoverCard(
       child: Container(
         padding: const EdgeInsets.all(28),
@@ -202,34 +202,39 @@ class ContactSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            /// App Icon
             Container(
               width: 64,
               height: 64,
               decoration: BoxDecoration(
                 color: AppColor.secondary.withOpacity(0.2),
-                shape: BoxShape.circle,
+                borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: AppColor.secondary, width: 2),
               ),
               child: const Center(
-                child: Text('NM', style: TextStyle(
+                child: Icon(
+                  Icons.home_work_outlined,
                   color: AppColor.secondary,
-                  fontWeight: FontWeight.w900,
-                  fontSize: 22,
-                )),
+                  size: 30,
+                ),
               ),
             ),
+
             const SizedBox(height: 20),
+
             Text(
-              'Neeraj Mishra',
+              'Aerie Box App',
               style: TextStyle(
                 color: AppColor.white,
                 fontSize: RFont.size(context, 20, desktop: 24),
                 fontWeight: FontWeight.w800,
               ),
             ),
+
             const SizedBox(height: 4),
+
             Text(
-              'Business & Operations Head',
+              'Room Rentals Made Easy',
               style: TextStyle(
                 color: AppColor.secondary,
                 fontSize: RFont.size(context, 12, desktop: 13),
@@ -237,29 +242,113 @@ class ContactSection extends StatelessWidget {
                 letterSpacing: 0.5,
               ),
             ),
+
             const SizedBox(height: 20),
+
             Container(
               width: double.infinity,
               height: 1,
               color: AppColor.white.withOpacity(0.1),
             ),
+
             const SizedBox(height: 20),
+
             Text(
-              '"Bharosa aur nateeja—dono guaranteed."',
+              'Download our app to find, book and manage your rental rooms on the go.',
               style: TextStyle(
                 color: AppColor.white.withOpacity(0.8),
                 fontSize: RFont.size(context, 14, desktop: 15),
-                fontStyle: FontStyle.italic,
                 height: 1.5,
               ),
             ),
+
             const SizedBox(height: 24),
+
+            /// App Store Buttons
+            Row(
+              children: [
+                Expanded(
+                  child: _buildStoreButton(
+                    icon: FontAwesomeIcons.apple,
+                    topText: 'Download on the',
+                    bottomText: 'App Store',
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: _buildStoreButton(
+                    icon: FontAwesomeIcons.googlePlay,
+                    topText: 'Get it on',
+                    bottomText: 'Google Play',
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 20),
+
             Text(
-              'Ravita Nexus EPC Solutions',
+              'Aerie Box Rental Services',
               style: TextStyle(
                 color: AppColor.white.withOpacity(0.5),
                 fontSize: RFont.size(context, 12, desktop: 13),
                 letterSpacing: 1,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStoreButton({
+    required FaIconData icon,
+    required String topText,
+    required String bottomText,
+  }) {
+    return InkWell(
+      onTap: () {},
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+        decoration: BoxDecoration(
+          color: AppColor.white.withOpacity(0.08),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: AppColor.white.withOpacity(0.15),
+          ),
+        ),
+        child: Row(
+          children: [
+            FaIcon(
+              icon,
+              color: AppColor.white,
+              size: 22,
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    topText,
+                    style: TextStyle(
+                      color: AppColor.white.withOpacity(0.7),
+                      fontSize: 9,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                  Text(
+                    bottomText,
+                    style: const TextStyle(
+                      color: AppColor.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      height: 1.2,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -288,7 +377,7 @@ class ContactSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'RAVITA NEXUS',
+                      'Aerie Box',
                       style: TextStyle(
                         color: AppColor.secondary,
                         fontSize: RFont.size(context, 16, desktop: 18),
@@ -298,7 +387,7 @@ class ContactSection extends StatelessWidget {
                     ),
 
                     Text(
-                      'EPC SOLUTIONS',
+                      'ROOM RENTALS',
                       style: TextStyle(
                         color: AppColor.white.withOpacity(0.5),
                         fontSize: RFont.size(context, 9, desktop: 10),
@@ -312,7 +401,7 @@ class ContactSection extends StatelessWidget {
                 Row(
                   children: [
                     _buildSocialIcon(
-                      icon: FontAwesomeIcons.facebookF,
+                      icon: FontAwesomeIcons.facebook,
                       onTap: () {},
                     ),
 
@@ -341,7 +430,7 @@ class ContactSection extends StatelessWidget {
 
                 /// Copyright
                 Text(
-                  '© 2026 Ravita Nexus EPC Solutions. All rights reserved.',
+                  '© 2026 Aerie Box Room Rentals. All rights reserved.',
                   style: TextStyle(
                     color: AppColor.white.withOpacity(0.45),
                     fontSize: RFont.size(context, 12, desktop: 13),
@@ -354,7 +443,7 @@ class ContactSection extends StatelessWidget {
               children: [
                 /// Logo
                 Text(
-                  'RAVITA NEXUS',
+                  'AERIE BOX',
                   style: TextStyle(
                     color: AppColor.secondary,
                     fontSize: RFont.size(context, 15),
@@ -366,7 +455,7 @@ class ContactSection extends StatelessWidget {
                 const SizedBox(height: 4),
 
                 Text(
-                  'EPC SOLUTIONS',
+                  'ROOM RENTALS',
                   style: TextStyle(
                     color: AppColor.white.withOpacity(0.5),
                     fontSize: RFont.size(context, 9),
@@ -411,7 +500,7 @@ class ContactSection extends StatelessWidget {
                 const SizedBox(height: 20),
 
                 Text(
-                  '© 2026 Ravita Nexus EPC Solutions.\nAll rights reserved.',
+                  '© 2026 Aerie Box\nAll rights reserved.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: AppColor.white.withOpacity(0.45),
@@ -427,7 +516,7 @@ class ContactSection extends StatelessWidget {
   }
 
   Widget _buildSocialIcon({
-    required IconData icon,
+    required FaIconData icon,
     required VoidCallback onTap,
   }) {
     return InkWell(
@@ -452,4 +541,3 @@ class ContactSection extends StatelessWidget {
       ),
     );
   }}
-

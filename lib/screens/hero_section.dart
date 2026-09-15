@@ -73,7 +73,7 @@ class _HeroSectionState extends State<HeroSection>
             gradient: LinearGradient(
               colors: [
                 AppColor.primary,
-                Color(0xFF002080)
+                Colors.blue
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -81,7 +81,7 @@ class _HeroSectionState extends State<HeroSection>
           ),
           padding: EdgeInsets.symmetric(
             horizontal: isMobile ? 20 : (isTablet ? 60 : 100),
-            vertical: isMobile ? 60 : 80,
+            vertical: isMobile ? 20 : 40,
           ),
           child: isMobile
               ? _buildMobileLayout(context)
@@ -100,10 +100,14 @@ class _HeroSectionState extends State<HeroSection>
         _buildHeadline(context),
         const SizedBox(height: 16),
         _buildTagline(context),
+        const SizedBox(height: 16),
+        _buildExtraContent(context),
         const SizedBox(height: 32),
         _buildButtons(context),
         const SizedBox(height: 40),
         _buildStatsRow(context),
+        const SizedBox(height: 30),
+        _buildHeroGraphic(context),
       ],
     );
   }
@@ -115,7 +119,7 @@ class _HeroSectionState extends State<HeroSection>
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              flex: 6,
+              flex: 5,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -124,6 +128,8 @@ class _HeroSectionState extends State<HeroSection>
                   _buildHeadline(context),
                   const SizedBox(height: 18),
                   _buildTagline(context),
+                  const SizedBox(height: 18),
+                  _buildExtraContent(context),
                   const SizedBox(height: 40),
                   _buildButtons(context),
                   const SizedBox(height: 60),
@@ -131,9 +137,9 @@ class _HeroSectionState extends State<HeroSection>
                 ],
               ),
             ),
-            const SizedBox(width: 40),
+            const SizedBox(width: 30),
             Expanded(
-              flex: 6,
+              flex: 4,
               child: _buildHeroGraphic(context),
             ),
           ],
@@ -152,7 +158,7 @@ class _HeroSectionState extends State<HeroSection>
         border: Border.all(color: AppColor.secondary.withOpacity(0.4)),
       ),
       child: const Text(
-        '⚡ EPC Engineering Excellence',
+        '⚡ Rental Service Excellence',
         style: TextStyle(
           color: AppColor.secondary,
           fontSize: 12,
@@ -168,20 +174,20 @@ class _HeroSectionState extends State<HeroSection>
       text: TextSpan(
         children: [
           TextSpan(
-            text: 'Ravita Nexus\n',
+            text: 'AERIE BOX\n',
             style: TextStyle(
               color: AppColor.white,
-              fontSize: RFont.size(context, 32, tablet: 42, desktop: 54),
+              fontSize: RFont.size(context, 32, tablet: 42, desktop: 56),
               fontWeight: FontWeight.w900,
               height: 1.1,
               letterSpacing: -1,
             ),
           ),
           TextSpan(
-            text: 'EPC Solutions',
+            text: 'Room Rentals',
             style: TextStyle(
               color: AppColor.secondary,
-              fontSize: RFont.size(context, 32, tablet: 42, desktop: 54),
+              fontSize: RFont.size(context, 32, tablet: 42, desktop: 46),
               fontWeight: FontWeight.w900,
               height: 1.1,
               letterSpacing: -1,
@@ -201,6 +207,49 @@ class _HeroSectionState extends State<HeroSection>
         fontStyle: FontStyle.italic,
         height: 1.5,
       ),
+    );
+  }
+
+  /// ✅ NAYA CONTENT — 3 lines add ki gayi hain
+  Widget _buildExtraContent(BuildContext context) {
+    final lines = [
+      'Comfortable & fully furnished rental rooms for students, professionals and families.',
+      'Easy booking, transparent pricing and zero hidden charges — har baar.',
+      'Safe, secure and well-maintained accommodation with 24/7 tenant support.',
+    ];
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: lines.map((line) {
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 7),
+                width: 6,
+                height: 6,
+                decoration: const BoxDecoration(
+                  color: AppColor.secondary,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  line,
+                  style: TextStyle(
+                    color: AppColor.white.withOpacity(0.75),
+                    fontSize: RFont.size(context, 13, desktop: 15),
+                    height: 1.6,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }).toList(),
     );
   }
 
@@ -225,6 +274,7 @@ class _HeroSectionState extends State<HeroSection>
             style: TextStyle(
               fontSize: RFont.size(context, 13, desktop: 15),
               fontWeight: FontWeight.w700,
+              color: Colors.black,
             ),
           ),
         ),
@@ -257,15 +307,15 @@ class _HeroSectionState extends State<HeroSection>
         final stats = [
           {
             'value': '${_projectAnimation.value}+',
-            'label': 'Projects Done'
+            'label': 'Rooms Listed'
           },
           {
             'value': '${_lineAnimation.value}kV',
-            'label': 'HT Line Expertise'
+            'label': 'App Downloader'
           },
           {
             'value': '${_deliveryAnimation.value}%',
-            'label': 'On-Time Delivery'
+            'label': 'Happy Tenants'
           },
         ];
 
@@ -302,22 +352,32 @@ class _HeroSectionState extends State<HeroSection>
 
   Widget _buildHeroGraphic(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2,
-      child: Stack(
-        children: [
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24),
-              image: const DecorationImage(
-                image: AssetImage('assets/images/LandingPage1.png'),
-                fit: BoxFit.fill,
-              ),
+      aspectRatio: 1.1,
+      child: Container(
+        width: double.infinity,
+        height: double.infinity,
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          image: const DecorationImage(
+            image: AssetImage('assets/images/aerie-banner.png'),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            gradient: RadialGradient(
+              center: Alignment.center,
+              radius: 0.85,
+              colors: [
+                Colors.transparent,
+                Colors.transparent,
+                Colors.blue.withOpacity(0.5),
+                AppColor.primary,
+              ],
+              stops: const [0.0, 0.5, 0.85, 1.0],
             ),
           ),
-        ],
+        ),
       ),
     );
   }

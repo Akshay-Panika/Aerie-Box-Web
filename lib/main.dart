@@ -15,15 +15,9 @@ class RavitaNexusApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ravita Nexus EPC Solutions',
+      title: 'Aerie Box',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(
-        //   seedColor: AppColor.primary,
-        //   primary: AppColor.primary,
-        //   secondary: AppColor.secondary,
-        //   surface: AppColor.surface,
-        // ),
         fontFamily: 'Roboto',
         useMaterial3: true,
         scaffoldBackgroundColor: AppColor.white,
