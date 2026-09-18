@@ -15,10 +15,77 @@ class _ServicesSectionState extends State<ServicesSection> {
 
   final List<Map<String, dynamic>> _services = [
     {
-      'icon': Icons.meeting_room_outlined,
-      'title': 'Room Rentals',
+      'icon': Icons.school_outlined,
+      'title': 'Student',
       'items': [
-        'Fully furnished rental rooms',
+        'Fully furnished student rooms',
+        'Single & sharing room options',
+        'Daily, weekly & monthly bookings',
+        'AC & non-AC rooms available',
+        'Attached bathroom facilities',
+        '24/7 water & electricity supply',
+        'Housekeeping & maintenance support',
+        'Secure & gated premises',
+        'Flexible check-in & check-out',
+        'Transparent pricing, no hidden charges',
+        'Easy online room booking',
+        'Prime location near colleges',
+        'Dedicated student support',
+        'Study table & chair provided',
+        'High-speed Wi-Fi for online classes',
+        'Quiet study environment',
+      ],
+    },
+    {
+      'icon': Icons.work_outline,
+      'title': 'Professionals',
+      'items': [
+        'Work stay rooms for professionals',
+        'Fully furnished single & sharing rooms',
+        'Daily, weekly & monthly stay options',
+        'AC & non-AC rooms available',
+        'Attached bathroom facilities',
+        '24/7 water & electricity supply',
+        'Housekeeping & maintenance support',
+        'Secure & gated premises',
+        'Flexible check-in & check-out',
+        'Transparent pricing, no hidden charges',
+        'Easy online room booking',
+        'Prime location connectivity',
+        'Dedicated working professional support',
+        'High-speed Wi-Fi & workspace',
+        'Laundry & ironing services',
+        'CCTV secured premises',
+      ],
+    },
+    {
+      'icon': Icons.access_time_outlined,
+      'title': 'Temporary Stay',
+      'items': [
+        'Short-term room rentals',
+        'Daily & weekly booking options',
+        'Fully furnished rooms',
+        'AC & non-AC rooms available',
+        'Attached bathroom facilities',
+        '24/7 water & electricity supply',
+        'Housekeeping & maintenance support',
+        'Secure & gated premises',
+        'Flexible check-in & check-out',
+        'Transparent pricing, no hidden charges',
+        'Easy online room booking',
+        'Prime location connectivity',
+        'Dedicated guest support',
+        'Ideal for travelers & visitors',
+        'No long-term commitment',
+        'Quick & hassle-free booking',
+      ],
+    },
+    {
+      'icon': Icons.palette_outlined,
+      'title': 'Freelancers',
+      'items': [
+        'Rooms for artists & creators',
+        'Fully furnished creative spaces',
         'Single & sharing room options',
         'Daily, weekly & monthly bookings',
         'AC & non-AC rooms available',
@@ -30,14 +97,60 @@ class _ServicesSectionState extends State<ServicesSection> {
         'Transparent pricing, no hidden charges',
         'Easy online room booking',
         'Prime location connectivity',
-        'Dedicated tenant support',
+        'Dedicated creator support',
+        'High-speed Wi-Fi for content creation',
+        'Inspiring & creative environment',
+      ],
+    },
+    {
+      'icon': Icons.family_restroom_outlined,
+      'title': 'Family',
+      'items': [
+        'Spacious family rooms',
+        'Fully furnished family suites',
+        'Daily, weekly & monthly bookings',
+        'AC & non-AC rooms available',
+        'Attached bathroom facilities',
+        '24/7 water & electricity supply',
+        'Housekeeping & maintenance support',
+        'Secure & gated premises',
+        'Flexible check-in & check-out',
+        'Transparent pricing, no hidden charges',
+        'Easy online room booking',
+        'Prime location connectivity',
+        'Dedicated family support',
+        'Kid-friendly environment',
+        'Extra bedding & storage space',
+        'Nearby parks & essentials',
+      ],
+    },
+    {
+      'icon': Icons.man_outlined,
+      'title': 'Bachelor',
+      'items': [
+        'Dedicated bachelor rooms',
+        'Fully furnished single & sharing rooms',
+        'Daily, weekly & monthly bookings',
+        'AC & non-AC rooms available',
+        'Attached bathroom facilities',
+        '24/7 water & electricity supply',
+        'Housekeeping & maintenance support',
+        'Secure & gated premises',
+        'Flexible check-in & check-out',
+        'Transparent pricing, no hidden charges',
+        'Easy online room booking',
+        'Prime location connectivity',
+        'Dedicated bachelor support',
+        'No restrictions on timings',
+        'Friends & visitors allowed',
+        'Hassle-free living experience',
       ],
     },
     {
       'icon': Icons.apartment_outlined,
-      'title': 'PG & Accommodation',
+      'title': 'PG & Hostel',
       'items': [
-        'PG rooms for students & professionals',
+        'PG rooms for girls & boys',
         'Hostel-style shared accommodation',
         'Meals & mess facility options',
         'Wi-Fi & internet connectivity',
@@ -45,18 +158,14 @@ class _ServicesSectionState extends State<ServicesSection> {
         'Laundry & ironing services',
         'CCTV secured premises',
         'Warden & security support',
-      ],
-    },
-    {
-      'icon': Icons.chair_outlined,
-      'title': 'Room Products & Services',
-      'items': [
-        'Room furniture on rent',
-        'Bed, mattress & wardrobe rental',
-        'Study table & chair sets',
-        'Mini fridge & appliance rental',
-        'Room setup & interior assistance',
-        'Custom room customization',
+        'Fully furnished rooms',
+        'Single & sharing room options',
+        'Daily, weekly & monthly bookings',
+        'AC & non-AC rooms available',
+        'Attached bathroom facilities',
+        '24/7 water & electricity supply',
+        'Housekeeping & maintenance support',
+        'Transparent pricing, no hidden charges',
       ],
     },
   ];
@@ -79,7 +188,7 @@ class _ServicesSectionState extends State<ServicesSection> {
               Text(
                 'WHAT WE DO',
                 style: TextStyle(
-                  color: AppColor.secondary,
+                  color: AppColor.error,
                   fontSize: RFont.size(context, 11, desktop: 12),
                   fontWeight: FontWeight.w700,
                   letterSpacing: 3,
@@ -155,7 +264,7 @@ class _ServicesSectionState extends State<ServicesSection> {
   Widget _buildActiveContent(BuildContext context, bool isMobile) {
     final service = _services[_activeTab];
     final items = service['items'] as List<String>;
-    final halfLen = (items.length / 2).ceil();
+    final halfLen = (items.length / 3).ceil();
 
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 300),
@@ -211,19 +320,33 @@ class _ServicesSectionState extends State<ServicesSection> {
     );
   }
 
-  Widget _buildTwoColumns(BuildContext context, List<String> items, int halfLen) {
+  Widget _buildTwoColumns(BuildContext context, List<String> items, int thirdLen) {
+    final firstEnd = thirdLen.clamp(0, items.length);
+    final secondEnd = (thirdLen * 2).clamp(0, items.length);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
           child: Column(
-            children: items.sublist(0, halfLen).map((item) => _buildItem(context, item)).toList(),
+            children: items.sublist(0, firstEnd).map((item) => _buildItem(context, item)).toList(),
           ),
         ),
         const SizedBox(width: 24),
         Expanded(
           child: Column(
-            children: items.sublist(halfLen).map((item) => _buildItem(context, item)).toList(),
+            children: items
+                .sublist(firstEnd, secondEnd)
+                .map((item) => _buildItem(context, item))
+                .toList(),
+          ),
+        ),
+        const SizedBox(width: 24),
+        Expanded(
+          child: Column(
+            children: items
+                .sublist(secondEnd)
+                .map((item) => _buildItem(context, item))
+                .toList(),
           ),
         ),
       ],

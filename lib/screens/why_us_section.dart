@@ -13,7 +13,6 @@ class WhyUsSection extends StatefulWidget {
 }
 
 class _WhyUsSectionState extends State<WhyUsSection> {
-
   late final ScrollController _scrollController;
 
   bool _autoScrolling = true;
@@ -35,8 +34,7 @@ class _WhyUsSectionState extends State<WhyUsSection> {
 
       if (!_scrollController.hasClients) continue;
 
-      final maxScroll =
-          _scrollController.position.maxScrollExtent;
+      final maxScroll = _scrollController.position.maxScrollExtent;
 
       final current = _scrollController.offset;
 
@@ -154,31 +152,55 @@ class _WhyUsSectionState extends State<WhyUsSection> {
                           name: 'Student Tenant',
                           role: 'PG Room Resident',
                           review:
-                          'Aerie Box provided me a clean and fully furnished PG room at an affordable price. The booking process was quick and completely hassle-free.',
+                          'Aerie Box provided me a clean and fully furnished student room at an affordable price. The booking process was quick and completely hassle-free.',
                         ),
 
                         _buildTestimonialCard(
                           context,
                           name: 'Working Professional',
-                          role: 'Monthly Room Rental',
+                          role: 'Work Stay Resident',
                           review:
-                          'The room was well-maintained with all basic facilities. Transparent pricing and no hidden charges made my stay very comfortable.',
+                          'The work stay room was well-maintained with all basic facilities. Transparent pricing and no hidden charges made my stay very comfortable.',
+                        ),
+
+                        _buildTestimonialCard(
+                          context,
+                          name: 'Temporary Guest',
+                          role: 'Short-term Stay',
+                          review:
+                          'I needed a short-term room for a week and Aerie Box made it incredibly easy. Quick booking, clean room and flexible check-out.',
+                        ),
+
+                        _buildTestimonialCard(
+                          context,
+                          name: 'Freelance Creator',
+                          role: 'Artist & Creator Stay',
+                          review:
+                          'The creative space was inspiring and fully furnished. High-speed Wi-Fi and a quiet environment helped me focus on my work.',
                         ),
 
                         _buildTestimonialCard(
                           context,
                           name: 'Family Tenant',
-                          role: 'Accommodation Service',
+                          role: 'Family Room Resident',
                           review:
-                          'We rented a fully furnished room through Aerie Box and the experience was smooth. Great location, secure premises and prompt support.',
+                          'We rented a spacious family room through Aerie Box and the experience was smooth. Great location, secure premises and prompt support.',
                         ),
 
                         _buildTestimonialCard(
                           context,
-                          name: 'Regular Customer',
-                          role: 'Furniture Rental',
+                          name: 'Bachelor Tenant',
+                          role: 'Bachelor Room Resident',
                           review:
-                          'Their room products and furniture rental service is excellent. Quality products, easy setup and very reasonable rental plans.',
+                          'No restrictions on timings and a hassle-free living experience. The bachelor room was exactly what I was looking for.',
+                        ),
+
+                        _buildTestimonialCard(
+                          context,
+                          name: 'PG Resident',
+                          role: 'Girls & Boys PG',
+                          review:
+                          'Safe and secure PG accommodation with mess facility. The warden and security support gave my parents complete peace of mind.',
                         ),
                       ]
                           .map(
@@ -266,22 +288,22 @@ class _WhyUsSectionState extends State<WhyUsSection> {
       {
         'icon': Icons.currency_rupee_outlined,
         'title': 'Affordable Pricing',
-        'desc': 'Budget-friendly room rentals with completely transparent and honest pricing',
+        'desc': 'Budget-friendly room rentals with completely transparent and honest pricing for every stay type',
       },
       {
         'icon': Icons.schedule,
         'title': 'Quick Booking',
-        'desc': 'Fast and hassle-free room booking process with instant confirmation',
+        'desc': 'Fast and hassle-free room booking process with instant confirmation for all categories',
       },
       {
         'icon': Icons.cleaning_services_outlined,
         'title': 'Clean & Maintained',
-        'desc': 'Regularly cleaned rooms with proper housekeeping and maintenance support',
+        'desc': 'Regularly cleaned rooms with proper housekeeping and maintenance support for students, professionals & families',
       },
       {
         'icon': Icons.security_outlined,
         'title': 'Safe & Secure',
-        'desc': 'CCTV secured premises with 24/7 support for complete peace of mind',
+        'desc': 'CCTV secured premises with 24/7 support for complete peace of mind for all residents',
       },
     ];
 
@@ -304,7 +326,6 @@ class _WhyUsSectionState extends State<WhyUsSection> {
     return HoverCard(
       child: Container(
         width: double.infinity,
-        // margin: const EdgeInsets.only(bottom: 16),
         padding: const EdgeInsets.all(22),
         decoration: BoxDecoration(
           color: AppColor.white,
@@ -356,9 +377,13 @@ class _WhyUsSectionState extends State<WhyUsSection> {
     final industries = [
       {'icon': Icons.school_outlined, 'label': 'Students'},
       {'icon': Icons.work_outline, 'label': 'Working Professionals'},
+      {'icon': Icons.access_time_outlined, 'label': 'Temporary Stay'},
+      {'icon': Icons.palette_outlined, 'label': 'Freelancers & Creators'},
       {'icon': Icons.family_restroom_outlined, 'label': 'Families'},
-      {'icon': Icons.travel_explore_outlined, 'label': 'Travelers & Bachelors'},
+      {'icon': Icons.man_outlined, 'label': 'Bachelors'},
+      {'icon': Icons.apartment_outlined, 'label': 'PG & Hostel'},
     ];
+
 
     return Wrap(
       spacing: 16,
@@ -367,7 +392,7 @@ class _WhyUsSectionState extends State<WhyUsSection> {
       children: industries.map((ind) {
         return HoverCard(
           child: Container(
-            width: isMobile ? double.infinity : 200,
+            width: isMobile ? 200 : 200,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
             decoration: BoxDecoration(
               color: AppColor.white.withOpacity(0.07),
@@ -398,11 +423,11 @@ class _WhyUsSectionState extends State<WhyUsSection> {
 
   Widget _buildWorkApproach(BuildContext context, bool isMobile) {
     final steps = [
-      {'num': '01', 'title': 'Search & Enquiry', 'desc': 'Browse available rooms and share your requirements'},
-      {'num': '02', 'title': 'Room Selection', 'desc': 'Choose the best room based on budget & location'},
-      {'num': '03', 'title': 'Booking Confirmation', 'desc': 'Quick booking with transparent pricing & no hidden charges'},
-      {'num': '04', 'title': 'Move-In & Setup', 'desc': 'Smooth check-in with furnished room & basic facilities'},
-      {'num': '05', 'title': 'Stay & Support', 'desc': 'Enjoy a comfortable stay with 24/7 tenant support'},
+      {'num': '01', 'title': 'Search & Enquiry', 'desc': 'Browse available rooms for students, professionals, families, bachelors & PG'},
+      {'num': '02', 'title': 'Room Selection', 'desc': 'Choose the best room based on your category, budget & location'},
+      {'num': '03', 'title': 'Booking Confirmation', 'desc': 'Quick booking with transparent pricing & no hidden charges for all stay types'},
+      {'num': '04', 'title': 'Move-In & Setup', 'desc': 'Smooth check-in with furnished room & basic facilities for every resident'},
+      {'num': '05', 'title': 'Stay & Support', 'desc': 'Enjoy a comfortable stay with 24/7 tenant support for students, professionals & families'},
     ];
 
     if (isMobile) {
